@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.akriskovets.grpc;
+
+message UserRequest {
+  int64 id = 1;
+}
+
+message UserResponse {
+  int64 id = 1;
+  string name = 2;
+  string phone = 3;
+}
+
+service UserServiceGRPC {
+  rpc getUser(UserRequest) returns (UserResponse);
+}
